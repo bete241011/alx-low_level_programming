@@ -1,23 +1,28 @@
-#include "holberton.h"
+#include"holberton.h"
 /**
- *_strcmp - function comparison of strings
- *@s1:  pointer
- *@s2:  pointer
- *Return: j-integer
+ * _strncpy - copy string
+ * @src: pointer of char
+ * @dest: pointer of char
+ * @n: integer
+ * Return: char
  */
-int _strcmp(char *s1, char *s2)
+
+char *_strncpy(char *dest, char *src, int n)
 {
-	int i, j;
+	int i = 0;
 
-	j = 0;
-
-	for (i = 0; s1[i] != '\0' && s2[i] != '\0'; i++)
+	while (i < n && src[i] != '\0')
 	{
-		if (s1[i] != s2[i])
-		{
-			j = s1[i] - s2[i];
-			break;
-		}
+		dest[i] = src[i];
+		i++;
 	}
-	return (j);
+	if (i < n)
+	{
+		for (; i < n; i++)
+
+			dest[i] = '\0';
+
+
+	}
+	return (dest);
 }
