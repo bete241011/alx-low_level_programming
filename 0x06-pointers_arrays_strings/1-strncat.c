@@ -1,28 +1,32 @@
-#include"holberton.h"
+#include "holberton.h"
+
 /**
- * _strncpy - copy string
- * @src: pointer of char
- * @dest: pointer of char
- * @n: integer
- * Return: char
+ * _strncat - function
+ *@dest: char
+ *@src: char
+ *@n: int
+ *Return: char
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strncat(char *dest, char *src, int n)
 {
-	int i = 0;
+	int i, j;
 
-	while (i < n && src[i] != '\0')
+	i = 0;
+
+	while (dest[i] != '\0')
 	{
-		dest[i] = src[i];
 		i++;
 	}
-	if (i < n)
+
+	j = 0;
+	while (src[j] != '\0' && j < n)
 	{
-		for (; i < n; i++)
-
-			dest[i] = '\0';
-
-
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
+	dest[i] = '\0';
+
 	return (dest);
 }
